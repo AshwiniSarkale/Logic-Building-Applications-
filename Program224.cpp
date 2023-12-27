@@ -95,6 +95,52 @@ int SinglyLL :: CountNode()
     return Count;
 }
 
+void SinglyLL :: DeleteFirst()
+{
+    if(first == NULL)
+    {
+        return;
+    }
+    else if(first->next == NULL)
+    {
+        delete first;
+        first = NULL;
+    }
+    else
+    {
+        PNODE temp = first;
+
+        first = first->next;
+        delete temp;
+    }
+    Count--;
+}
+
+void SinglyLL :: DeleteLast()
+{
+    if(first == NULL)
+    {
+        return;
+    }
+    else if(first->next == NULL)
+    {
+        delete first;
+        first = NULL;
+    }
+    else
+    {
+        PNODE temp = first;
+
+        while(temp->next->next != NULL)
+        {
+            temp = temp->next;
+        }
+        delete temp->next;
+        temp->next = NULL;
+    }
+    Count--;
+}
+
 int main()
 {
     SinglyLL obj;
@@ -114,5 +160,14 @@ int main()
     iRet = obj.CountNode();
     cout<<"Number of elements in the linked list are : "<<iRet<<"\n";
     
+    obj.DeleteFirst();
+    obj.Display();
+    iRet = obj.CountNode();
+    cout<<"Number of elements in the linked list are : "<<iRet<<"\n";
+
+    obj.DeleteLast();
+    obj.Display();
+    iRet = obj.CountNode();
+    cout<<"Number of elements in the linked list are : "<<iRet<<"\n";
     return 0;
 }

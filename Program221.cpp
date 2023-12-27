@@ -95,7 +95,6 @@ int main()
     obj.InsertLast(201);
 
     obj.Display();
-
     cout<<"Number of elements in the linked list are : "<<obj.Count<<"\n";
 
     return 0;

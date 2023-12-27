@@ -73,7 +73,7 @@ class SinglyLL
 
             while(temp != NULL)   // type 1
             {
-                cout<<"| "<<temp->data<<" | ->";
+                cout<<"| "<<temp->data<<" | -> ";
                 temp = temp->next;
             }
             cout<<"NULL \n";
@@ -101,7 +101,6 @@ int main()
     obj.InsertLast(201);
 
     obj.Display();
-
     iRet = obj.CountNode();
     cout<<"Number of elements in the linked list are : "<<iRet<<"\n";
 
